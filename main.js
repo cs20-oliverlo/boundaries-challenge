@@ -40,20 +40,6 @@ function keydownHandler(event) {
         y1 += 5;
     }
 
-    if (event.code == "ArrowLeft" && event.code == "ArrowUp") {
-        x1 -= 5;
-        y1 -= 5;
-    } else if  (event.code == "ArrowLeft" && event.code == "ArrowDown") {
-        x1 -= 5;
-        y1 += 5;
-    } else if (event.code == "ArrowRight" && event.code == "ArrowUp") {
-        x1 += 5;
-        y1 -= 5;
-    } else if (event.code == "ArrowRight" && event.code == "ArrowDown") {
-        x1 += 5;
-        y1 += 5;
-    }
-
     // Green Box Movement
     if (event.code == "ArrowLeft") {
         x2 -= 5;
@@ -62,20 +48,6 @@ function keydownHandler(event) {
     } else if (event.code == "ArrowUp") {
         y2 -= 5;
     } else if (event.code == "ArrowDown") {
-        y2 += 5;
-    }
-
-    if (event.code == "ArrowLeft" && event.code == "ArrowUp") {
-        x2 -= 5;
-        y2 -= 5;
-    } else if  (event.code == "ArrowLeft" && event.code == "ArrowDown") {
-        x2 -= 5;
-        y2 += 5;
-    } else if (event.code == "ArrowRight" && event.code == "ArrowUp") {
-        x2 += 5;
-        y2 -= 5;
-    } else if (event.code == "ArrowRight" && event.code == "ArrowDown") {
-        x2 += 5;
         y2 += 5;
     }
 
@@ -113,19 +85,5 @@ function keydownHandler(event) {
         x2 = -100;
     } else if (y2 >= 600) {
         y2 = -100;
-    }
-
-    if (x2 <= -100 && y2 <= -100) {
-        x2 = 800;
-        y2 = 600;
-    } else if (x2 <= -100 && y2 >= 600) {
-        x2 = 800;
-        y2 = -100;
-    } else if (x2 >= 800 && y2 <= -100) {
-        x2 = -100;
-        y2 = 600;
-    } else if (x2 >= 800 && y2 >= 600) {
-        x2 = -100;
-        y12 = -100;
     }
 }

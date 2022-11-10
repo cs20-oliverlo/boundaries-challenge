@@ -5,6 +5,8 @@ cnv.height = 600;
 
 let x1 = 150;
 let y1 = 250;
+let x2 = 550;
+let y2 = 250;
 
 requestAnimationFrame(draw);
 function draw() {
@@ -18,7 +20,7 @@ function draw() {
 
     ctx.strokeStyle = "rgb(0, 255, 0)";
     ctx.lineWidth = 4;
-    ctx.strokeRect(550, 250, 100, 100);
+    ctx.strokeRect(x2, y2, 100, 100);
 
     requestAnimationFrame(draw)
 }
@@ -27,10 +29,9 @@ function draw() {
 document.addEventListener("keydown", keydownHandler);
 
 function keydownHandler(event) {
+    // Blue Box Movement
     if (event.code == "ArrowLeft") {
         x1 -= 5;
-    } else if (event.code == "ArrowRight") {
-        x1 += 5;
     } else if (event.code == "ArrowRight") {
         x1 += 5;
     } else if (event.code == "ArrowUp") {
@@ -38,8 +39,47 @@ function keydownHandler(event) {
     } else if (event.code == "ArrowDown") {
         y1 += 5;
     }
-    // add diagonal
 
+    if (event.code == "ArrowLeft" && event.code == "ArrowUp") {
+        x1 -= 5;
+        y1 -= 5;
+    } else if  (event.code == "ArrowLeft" && event.code == "ArrowDown") {
+        x1 -= 5;
+        y1 += 5;
+    } else if (event.code == "ArrowRight" && event.code == "ArrowUp") {
+        x1 += 5;
+        y1 -= 5;
+    } else if (event.code == "ArrowRight" && event.code == "ArrowDown") {
+        x1 += 5;
+        y1 += 5;
+    }
+
+    // Green Box Movement
+    if (event.code == "ArrowLeft") {
+        x2 -= 5;
+    } else if (event.code == "ArrowRight") {
+        x2 += 5;
+    } else if (event.code == "ArrowUp") {
+        y2 -= 5;
+    } else if (event.code == "ArrowDown") {
+        y2 += 5;
+    }
+
+    if (event.code == "ArrowLeft" && event.code == "ArrowUp") {
+        x2 -= 5;
+        y2 -= 5;
+    } else if  (event.code == "ArrowLeft" && event.code == "ArrowDown") {
+        x2 -= 5;
+        y2 += 5;
+    } else if (event.code == "ArrowRight" && event.code == "ArrowUp") {
+        x2 += 5;
+        y2 -= 5;
+    } else if (event.code == "ArrowRight" && event.code == "ArrowDown") {
+        x2 += 5;
+        y2 += 5;
+    }
+
+    // Blue Box Boundaries
     if (x1 <= 0) {
         x1 = 0;
     } else if (y1 <= 0) {
@@ -48,7 +88,7 @@ function keydownHandler(event) {
         x1 = 700;
     } else if (y1 >= 500) {
         y1 = 500;
-    }
+    } 
 
     if (x1 <= 0 && y1 <= 0) {
         x1 = 0;
@@ -62,5 +102,30 @@ function keydownHandler(event) {
     } else if (x1 >= 700 && y1 >= 500) {
         x1 = 700;
         y1 = 500;
+    }
+
+    // Green Box Boundaries
+    if (x2 <= -100) {
+        x2 = 800;
+    } else if (y2 <= -100) {
+        y2 = 600;
+    } else if (x2 >= 800) {
+        x2 = -100;
+    } else if (y2 >= 600) {
+        y2 = -100;
+    }
+
+    if (x2 <= -100 && y2 <= -100) {
+        x2 = 800;
+        y2 = 600;
+    } else if (x2 <= -100 && y2 >= 600) {
+        x2 = 800;
+        y2 = -100;
+    } else if (x2 >= 800 && y2 <= -100) {
+        x2 = -100;
+        y2 = 600;
+    } else if (x2 >= 800 && y2 >= 600) {
+        x2 = -100;
+        y12 = -100;
     }
 }

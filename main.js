@@ -41,13 +41,13 @@ function keydownHandler(event) {
     }
 
     // Green Box Movement
-    if (event.code == "ArrowLeft") {
+    if (event.code == "KeyA") {
         x2 -= 5;
-    } else if (event.code == "ArrowRight") {
+    } else if (event.code == "KeyD") {
         x2 += 5;
-    } else if (event.code == "ArrowUp") {
+    } else if (event.code == "KeyW") {
         y2 -= 5;
-    } else if (event.code == "ArrowDown") {
+    } else if (event.code == "KeyS") {
         y2 += 5;
     }
 

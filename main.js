@@ -32,22 +32,34 @@ function keydownHandler(event) {
     // Blue Box Movement
     if (event.code == "ArrowLeft") {
         x1 -= 5;
-    } else if (event.code == "ArrowRight") {
+    }
+    
+    if (event.code == "ArrowRight") {
         x1 += 5;
-    } else if (event.code == "ArrowUp") {
+    }
+    
+    if (event.code == "ArrowUp") {
         y1 -= 5;
-    } else if (event.code == "ArrowDown") {
+    }
+    
+    if (event.code == "ArrowDown") {
         y1 += 5;
     }
 
     // Green Box Movement
     if (event.code == "KeyA") {
         x2 -= 5;
-    } else if (event.code == "KeyD") {
+    }
+    
+    if (event.code == "KeyD") {
         x2 += 5;
-    } else if (event.code == "KeyW") {
+    }
+    
+    if (event.code == "KeyW") {
         y2 -= 5;
-    } else if (event.code == "KeyS") {
+    }
+    
+    if (event.code == "KeyS") {
         y2 += 5;
     }
 
